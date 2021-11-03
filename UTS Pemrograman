@@ -1,0 +1,163 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Main{
+
+    private String[] MyKelinci = {"Holland Lop","Netherland Dwarf"};
+    public List <Kelinci> jenisSnack = new ArrayList<snack>();
+    public List <Kelinci> jenisSnack2 = new ArrayList<snack>();
+
+    public static void main(String[] args) {
+
+        System.out.println("===================================================");
+        System.out.println("\t\tJenis - jenis snack");
+        System.out.println("===================================================");
+
+        Scanner myObj = new Scanner(System.in);
+        Main m = new Main();
+
+        System.out.println("\nPilihlah angka untuk melanjutkan");
+        System.out.println("1. Menambahkan jenis snack baru");
+        System.out.println("2. Melihat jenis snack");
+        System.out.print("\nPilih angka : ");
+
+        String input = myObj.nextLine();
+        int code = Integer.parseInt(input);
+        System.out.println("===================================================");
+
+        switch (code) {
+            case 1:
+                m.InputListSnack();
+                break;
+            case 2:
+                m.ShowListSnack();
+                break;
+
+            default:
+                System.out.println("Pilihan tidak terdaftar");
+                break;
+        }
+
+    }
+
+    public void InputListSnack(){
+
+        System.out.println("\n---------------------------------------------------");
+        System.out.println("\t\tMenambahkan snack");
+        System.out.println("---------------------------------------------------\n");
+        System.out.println("Pilih jenis snack : ");
+
+        int i=1;
+        for (String snack : MySnack){
+            System.out.println(i + "." + snack);
+            i++;
+        }
+
+        System.out.print("\nMasukkan pilihan : ");
+        Scanner myObj = new Scanner(System.in);
+
+        String inputProduct = myObj.nextLine();
+        int product = Integer.parseInt(inputProduct);
+
+        switch (product) {
+            case 1:
+                try {
+                    jenisSnack1 =  InputSnackiHl();
+                } catch (Exception e) {
+                    System.out.println("Masukkan data yang valid!");
+                    System.out.println("Error: "+e.getMessage());
+                }
+                break;
+
+            case 2:
+                try {
+                    jenisSnack2 =  InputSnackND();
+                } catch (Exception e) {
+                    System.out.println("Masukkan data yang valid!");
+                    System.out.println("Error: "+e.getMessage());
+                }
+                break;
+
+            default:
+                break;
+
+        }
+
+        myObj.close();
+
+    }
+
+    public List InputSnackHL() {
+
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("\n============= Jenis Snack Baru =============");
+
+        int jmlData1 = 2;
+        for (int i = 0; i < jmlData1; i++) {
+           snack k1 = new snack();
+            System.out.println("Jenis ke-" + (i+1) + " :");
+
+            System.out.print("Pilihan Rasa : ");
+            String Rasa = myObj.nextLine();
+            k1.setRasa(rasa);
+
+            System.out.print("Bentuk Kemasan : ");
+            String kemasan = myObj.nextLine();
+            k1.setKemasan(kemasan);
+
+            System.out.print("Warna Kemasan : ");
+            String warna = myObj.nextLine();
+            k1.setWarna(warna);
+
+            System.out.println('\n');
+            this.jenisSnack1.add(k1);
+        }
+
+        System.out.println("\n");
+        myObj.close();
+        return this.jenisSnack1;
+
+    }
+
+    public List InputsnackND() {
+
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("\n============= Jenis Snack Baru =============");
+
+        int jmlData2 = 2;
+        for (int i = 0; i < jmlData2; i++) {
+           Snack k2 = new Snack();
+            System.out.println("Jenis ke-" + (i+1) + ":");
+
+            System.out.print("Pilihan rasa : ");
+            String rasa = myObj.nextLine();
+            k2.setRasa(rasa);
+
+            System.out.print("Bentuk Kemasan : ");
+            String kemasan = myObj.nextLine();
+            k2.setKemasan(kemasan);
+
+            System.out.print("Warna Kemasan : ");
+            String kemasan = myObj.nextLine();
+            k2.setWarna(warna);
+
+            System.out.println('\n');
+            this.jenisSnack2.add(k2);
+        }
+
+        System.out.println("\n");
+        myObj.close();
+        return this.jenissnack2;
+
+    }
+
+    public void ShowListSnack(){
+
+        for (String x : MySnacki) {
+            System.out.println("snack yang sudah ada yaitu : "+ x);
+        }
+
+    }
+
+}
