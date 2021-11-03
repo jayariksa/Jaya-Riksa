@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 class Main{
 
-    private String[] MyKelinci = {"Holland Lop","Netherland Dwarf"};
-    public List <Kelinci> jenisSnack = new ArrayList<snack>();
-    public List <Kelinci> jenisSnack2 = new ArrayList<snack>();
+    private String[] MySnack = {"Holland Lop","Netherland Dwarf"};
+    public List <Snack> jenisSnack = new ArrayList<snack>();
+    public List <Snack> jenisSnack2 = new ArrayList<snack>();
 
     public static void main(String[] args) {
 
